@@ -1,7 +1,7 @@
 import { EntityManager, FilterQuery, FindOptions } from "@mikro-orm/core";
 import { ProductCrudService, ProductQueryContext } from "../interface";
 import { ProductModel } from "./entities/product.entities";
-import { Product } from "../types";
+import { CreateProductParams, Product } from "../types";
 
 export class ProductCrudServiceMikroOrm implements ProductCrudService {
   constructor(private entityManager: EntityManager) {}
@@ -38,6 +38,28 @@ export class ProductCrudServiceMikroOrm implements ProductCrudService {
     product.isActive = false;
     await em.flush();
     return true;
+  }
+
+  public async create(params: CreateProductParams): Promise<Product> {
+    const em = this.entityManager.fork();
+    const now = new Date();
+
+    const product = em.create(ProductModel, {
+        name: params.name,
+        sku: params.sku,
+        isActive: true,
+        category: params.category,
+        productDetail: params.detail,
+        createdAt: now,
+        updatedAt: now,
+    });
+    if (!product)
+      throw new Error(
+        "Failed to insert product: something wrong with your request body"
+      );
+
+    await em.flush();
+    return product;
   }
 }
 

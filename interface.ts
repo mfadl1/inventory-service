@@ -1,6 +1,7 @@
-import { Product } from "./types";
+import { CreateProductParams, Product } from "./types";
 
 export interface ProductCrudService {
+    create(params: CreateProductParams): Promise<Product>
     createQueryContext(): ProductQueryContext;
     findAndCount(ctx: ProductQueryContext): Promise<{
         data: Iterable<Product>;

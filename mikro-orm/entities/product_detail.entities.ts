@@ -34,7 +34,7 @@ export class ProductDetailModel implements ProductDetail {
     @Property({ nullable: false, default: 0 })
     stock!: number;
 
-    @Property({ nullable: false, columnType: 'double precision' })
+    @Property({ nullable: true, columnType: 'double precision' })
     rating!: number;
 
     @Property({ nullable: true, fieldName: 'url_image' })

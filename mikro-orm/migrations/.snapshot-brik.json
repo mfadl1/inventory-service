@@ -160,11 +160,11 @@
         },
         "rating": {
           "name": "rating",
-          "type": "double",
+          "type": "double precision",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
-          "nullable": false,
+          "nullable": true,
           "mappedType": "double"
         },
         "url_image": {

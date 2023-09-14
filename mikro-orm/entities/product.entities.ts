@@ -20,7 +20,7 @@ export class ProductModel implements Product {
 		onDelete: 'cascade',
 		strategy: LoadStrategy.JOINED
 	})
-	productDetail!: ProductDetailModel;
+	productDetail: ProductDetailModel = new ProductDetailModel();
 
     @Property({ nullable: false })
     name!: string;
