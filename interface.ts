@@ -6,6 +6,7 @@ export interface ProductCrudService {
         data: Iterable<Product>;
         count: number;
     }>;
+    delete(productId: number): Promise<boolean>;
 }
 
 export interface ProductQueryContext {
