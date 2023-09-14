@@ -108,6 +108,13 @@ export class ProductQueryContextMikroOrm
         return this;
     }
 
+    isActive(value: boolean): ProductQueryContext {
+        Object.assign(this.ctx.where, {
+            isActive: value
+        } as FilterQuery<ProductModel>);
+        return this;
+    }
+
     buildContext() {
         return this.ctx;
     }

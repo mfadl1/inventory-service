@@ -18,4 +18,5 @@ export interface ProductQueryContext {
         order: 'asc' | 'desc';
     }): ProductQueryContext;
     name(value: string): ProductQueryContext;
+    isActive(value: boolean): ProductQueryContext
 }
