@@ -1,6 +1,7 @@
 import { Product } from "./types";
 
 export interface ProductCrudService {
+    createQueryContext(): ProductQueryContext;
     findAndCount(ctx: ProductQueryContext): Promise<{
         data: Iterable<Product>;
         count: number;
