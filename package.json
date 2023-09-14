@@ -1,0 +1,59 @@
+{
+    "name": "@elevarm/inventory",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "main": "lib/inventory.module.js",
+    "types": "lib/inventory.module.d.ts",
+    "files": [
+        "lib"
+    ],
+    "exports": {
+        ".": {
+            "import": "./lib/inventory.module.js",
+            "require": "./lib/inventory.module.js",
+            "types": "./lib/inventory.module.d.ts",
+            "default": "./lib/inventory.module.js"
+        }
+    },
+    "scripts": {
+        "prepare": "npx tsc",
+        "build": "npx tsc",
+        "clean": "rm -rf ./lib"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "drizzle-orm": "^0.22.0",
+        "reflect-metadata": "^0.1.13",
+        "typescript": "^4.9.5"
+    },
+    "devDependencies": {
+        "@types/node": "^18.16.16",
+        "@types/pg": "^8.10.1",
+        "drizzle-kit": "^0.17.6",
+        "drizzle-orm": "^0.22.0",
+        "inversify": "^6.0.1",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^4.4.1",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "@mikro-orm/cli": "^5.6.6",
+        "@mikro-orm/core": "^5.6.6",
+        "@mikro-orm/migrations": "^5.6.6",
+        "@mikro-orm/postgresql": "^5.6.6",
+        "knex": "^2.4.2",
+        "pg": "^8.11.0",
+        "ts-node": "^10.9.1",
+        "zod": "^3.21.4"
+    },
+    "mikro-orm": {
+        "useTsNode": true,
+        "configPaths": [
+            "./drivers/mikro-orm/mikro-orm.config.ts"
+        ]
+    }
+  }
+  
